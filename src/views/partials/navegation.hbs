@@ -1,0 +1,41 @@
+{{!-- Esta es la barra de navegación y es integrada en el main, por medio de la 
+nomenclatura de indexación--}}
+<nav class="navbar navbar-expand-lg narvar-dark bg-dark">
+  <div class="container">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/">Favorite Links</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse d-flex" id="navbarNav">
+      <ul class="navbar-nav ml-auto d-flex">
+        {{#if user}}
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Links
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/links">Todos los links</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/links/add">Agregar links</a>
+        </div>
+      </li>
+        <li class="nav-item dropdown">
+          <a href="/profile" class="nav-link">Perfil</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="/logout" class="nav-link">Cerrar Sesión</a>
+        </li>
+        {{else}}
+         <li class="nav-item dropdown">
+          <a href="/signin" class="nav-link">Iniciar Sesión</a>
+         </li>
+         <li class="nav-item dropdown">
+          <a href="/signup" class="nav-link">Registrar</a>
+         </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>
